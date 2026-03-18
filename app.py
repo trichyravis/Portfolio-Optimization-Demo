@@ -1,3 +1,4 @@
+
 """
 Dynamic Efficient Frontier — Multi-Asset Portfolio Optimizer
 The Mountain Path - World of Finance
@@ -357,19 +358,18 @@ def run_efficient_frontier(prices, n_port=10000, rf=DEFAULT_RISK_FREE_RATE, td=D
 # SECTION 6: PLOTLY CHART TEMPLATE
 # ═════════════════════════════════════════════════════════════════════════════
 
-PLOTLY_TEMPLATE = dict(
-    paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(10,25,47,0.6)",
-    font=dict(color=COLORS["text_primary"], family="Segoe UI, sans-serif"),
-    title_font=dict(color=COLORS["gold"], size=18),
-    xaxis=dict(gridcolor="rgba(255,215,0,0.08)", zerolinecolor="rgba(255,215,0,0.15)"),
-    yaxis=dict(gridcolor="rgba(255,215,0,0.08)", zerolinecolor="rgba(255,215,0,0.15)"),
-    legend=dict(bgcolor="rgba(17,34,64,0.8)", bordercolor=f"{COLORS['gold']}33", borderwidth=1, font=dict(size=11)),
-    hoverlabel=dict(bgcolor=COLORS["card_bg"], bordercolor=COLORS["gold"], font=dict(color=COLORS["text_primary"])),
-)
-
-
 def _styled(fig):
-    fig.update_layout(**PLOTLY_TEMPLATE)
+    """Apply Mountain Path theme to a Plotly figure (compatible with all Plotly versions)."""
+    fig.update_layout(
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(10,25,47,0.6)",
+        font=dict(color=COLORS["text_primary"], family="Segoe UI, sans-serif"),
+        title=dict(font=dict(color=COLORS["gold"], size=18)),
+        legend=dict(bgcolor="rgba(17,34,64,0.8)", bordercolor="rgba(255,215,0,0.2)", borderwidth=1, font=dict(size=11)),
+        hoverlabel=dict(bgcolor=COLORS["card_bg"], bordercolor=COLORS["gold"], font=dict(color=COLORS["text_primary"])),
+    )
+    fig.update_xaxes(gridcolor="rgba(255,215,0,0.08)", zerolinecolor="rgba(255,215,0,0.15)")
+    fig.update_yaxes(gridcolor="rgba(255,215,0,0.08)", zerolinecolor="rgba(255,215,0,0.15)")
     return fig
 
 
