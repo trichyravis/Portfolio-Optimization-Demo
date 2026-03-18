@@ -76,6 +76,55 @@ PAGE_CSS = f"""
         border-right: 1px solid {COLORS['gold']}33;
     }}
     section[data-testid="stSidebar"] .stMarkdown p {{ color: {COLORS['text_primary']}; }}
+    section[data-testid="stSidebar"] .stMarkdown h1,
+    section[data-testid="stSidebar"] .stMarkdown h2,
+    section[data-testid="stSidebar"] .stMarkdown h3 {{ color: {COLORS['gold']} !important; }}
+
+    /* Sidebar widget labels */
+    section[data-testid="stSidebar"] label,
+    section[data-testid="stSidebar"] .stTextArea label,
+    section[data-testid="stSidebar"] .stDateInput label,
+    section[data-testid="stSidebar"] .stNumberInput label,
+    section[data-testid="stSidebar"] .stSlider label,
+    section[data-testid="stSidebar"] .stCheckbox label,
+    section[data-testid="stSidebar"] .stSelectbox label,
+    section[data-testid="stSidebar"] .stMultiSelect label {{
+        color: {COLORS['text_primary']} !important;
+    }}
+
+    /* Sidebar slider value, help text, small text */
+    section[data-testid="stSidebar"] .stSlider [data-testid="stTickBarMin"],
+    section[data-testid="stSidebar"] .stSlider [data-testid="stTickBarMax"],
+    section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p,
+    section[data-testid="stSidebar"] [data-testid="stWidgetLabel"] span,
+    section[data-testid="stSidebar"] small,
+    section[data-testid="stSidebar"] span {{
+        color: {COLORS['text_muted']} !important;
+    }}
+
+    /* Sidebar checkbox text */
+    section[data-testid="stSidebar"] .stCheckbox span p {{
+        color: {COLORS['text_primary']} !important;
+    }}
+
+    /* Sidebar input fields */
+    section[data-testid="stSidebar"] input,
+    section[data-testid="stSidebar"] textarea,
+    section[data-testid="stSidebar"] [data-baseweb="input"] input,
+    section[data-testid="stSidebar"] [data-baseweb="textarea"] textarea {{
+        color: {COLORS['text_primary']} !important;
+        background-color: {COLORS['card_bg']} !important;
+        border-color: {COLORS['gold']}44 !important;
+    }}
+
+    /* Sidebar select/dropdown */
+    section[data-testid="stSidebar"] [data-baseweb="select"] {{
+        color: {COLORS['text_primary']} !important;
+    }}
+    section[data-testid="stSidebar"] [data-baseweb="select"] > div {{
+        background-color: {COLORS['card_bg']} !important;
+        border-color: {COLORS['gold']}44 !important;
+    }}
 
     div[data-testid="stMetric"] {{
         background: {COLORS['card_bg']}; border: 1px solid {COLORS['gold']}22;
